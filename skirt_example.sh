@@ -14,6 +14,6 @@ module load scipy
 cd $SLURM_SUBMIT_DIR
 
 
-/home/u14266/src/SKIRT/release/SKIRTmain/skirt ~use_SKIRT/run/Zubko_0.ski
+/home/u14266/src/SKIRT/release/SKIRTmain/skirt run/Zubko_0.ski
 
-/home/u14266/src/SKIRT/release/SKIRTmain/skirt ~use_SKIRT/run/nodust_0.ski
+/home/u14266/src/SKIRT/release/SKIRTmain/skirt run/nodust_0.ski

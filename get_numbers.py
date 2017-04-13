@@ -7,8 +7,8 @@
 ###Output: a file titled '*_numbers.dat', which lists the halo numbers. There is one for pynbody and the database.
 
 import pynbody
-import numpy
 import tangos as db
+import numpy as np
 
 #Load in pynbody data
 z_2 = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.001945')
@@ -30,9 +30,10 @@ for i in range(len(halos_2)):
         numbers_2_pynbody.append(i)
     else:
         continue
-np.savetxt('pynbody_numbers.dat', numbers_2_pynbody.append)
+np.savetxt('pynbody_numbers.dat', numbers_2_pynbody)
 
 #Get numbers via the simulation database for z_2
+'''
 for j in range(len(db_2.halos)):
     ndm = len(db_2.halos[j].NDM)
     ngas = len(db_2.halos[j].Ngas)
@@ -41,5 +42,5 @@ for j in range(len(db_2.halos)):
         numbers_2_db.append(j)
     else:
         continue
-np.savetxt('database_numbers.dat', numbers_2_db.append)
-
+np.savetxt('database_numbers.dat', numbers_2_db)
+'''

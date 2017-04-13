@@ -13,7 +13,7 @@ sim = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.7
 halos = sim.halos(dosort=True)
 
 #Load in the numbers pulled via the 'get_numbers.py' script.
-numbers = np.loadtxt('db_numbers.dat')
+numbers = np.loadtxt('pynbody_numbers.dat')
 
 #Cycle through the halos pulling relevent particle information and print it to a single text file for each individual halo.
 for i in numbers:
