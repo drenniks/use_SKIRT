@@ -12,7 +12,7 @@ for i in range(len(numbers)):
     copyfile('skirt_example_images.sh', 'submit/images_' + str(numbers[i]) + '.sh')
     for line in fileinput.input('submit/images_' + str(numbers[i]) + '.sh', inplace = 1):
         if 'images_faceon_0.ski' in line:
-            line = line.replace('images_faceon_0.ski', 'run/images_faceon_' + str(numbers[i]) + '.ski')
+            line = line.replace('images_faceon_0.ski', 'run/images_' + str(numbers[i]) + '.ski')
         sys.stdout.write(line)
         del line
         gc.collect()
