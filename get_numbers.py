@@ -6,41 +6,49 @@
 ###The requirements below are that the halo must have at least 100,000 dark matter particles, at least 100,000 star and gas particles, and at least 5,000 gas particles.
 ###Output: a file titled '*_numbers.dat', which lists the halo numbers. There is one for pynbody and the database.
 
+###python get_numbers.py step#
+import fnmatch
+import os 
 import pynbody
 import tangos as db
 import numpy as np
+import sys
 
 #Load in pynbody data
-z_2 = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.001945')
-halos_2 = z_2.halos(dosort=True)
+step = sys.argv[1] 
+
+for file in os.listdir('/oasis/scratch/comet/mjt29/temp_project/Romulus25/'):
+    if fnmatch.fnmatch(file, '*' + str(step) + '*'):
+        z = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.' + str(step))
+halos = z.halos(dosort=True)
 
 #Load in simulation database
-db_2 = db.get_timestep('cosmo25%/%1945')
+sim = db.get_timestep('cosmo25%/%' + str(step))
 
 #Empty lists
-numbers_2_pynbody = []
-numbers_2_db = []
+numbers_pynbody = []
+numbers_db = []
 
-#Get numbers via pynbody for z_2
-for i in range(len(halos_2)):
-    darkm = len(halos_2[i].dark)
-    starsm = len(halos_2[i].stars)
-    gasm = len(halos_2[i].gas)
-    if (darkm >= 100000) and (starsm + gasm >= 100000) and (gasm >= 5000):
-        numbers_2_pynbody.append(i)
+#Get numbers via pynbody for z
+for i in range(len(halos)):
+    dark = len(halos[i].dark)
+    stars = len(halos[i].stars)
+    gas = len(halos[i].gas)
+    if (dark >= 100000) and (stars + gas >= 100000) and (gas >= 10000):
+        numbers_pynbody.append(i)
     else:
         continue
-np.savetxt('pynbody_numbers.dat', numbers_2_pynbody)
+np.savetxt('num_' + str(step) + '.dat', numbers_pynbody)
 
-#Get numbers via the simulation database for z_2
+#Get numbers via the simulation database for z
 '''
-for j in range(len(db_2.halos)):
-    ndm = len(db_2.halos[j].NDM)
-    ngas = len(db_2.halos[j].Ngas)
-    nstars = len(db_2.halos[j].Nstars)
+for j in range(len(sim.halos)):
+    ndm = len(sim.halos[j].NDM)
+    ngas = len(sim.halos[j].Ngas)
+    nstars = len(sim.halos[j].Nstars)
     if (ndm >= 100000) and (nstars + ngas >= 100000) and (ngas >= 5000):
-        numbers_2_db.append(j)
+        numbers_db.append(j)
     else:
         continue
-np.savetxt('database_numbers.dat', numbers_2_db)
+np.savetxt('database_numbers.dat', numbers_db)
 '''

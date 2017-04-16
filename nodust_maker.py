@@ -7,14 +7,15 @@ import gc
 import numpy as np
 
 #Load pynbody halo numbers
-numbers = np.loadtxt('pynbody_numbers.dat')
+step = sys.argv[1]
+numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 #Generate the files in the 'run' folder.
 for i in range(len(numbers)):
-    copyfile('nodust.ski', 'run/nodust_' +str(numbers[i])+ '.ski')
-    for line in fileinput.input('run/nodust_'+str(numbers[i])+'.ski', inplace=1):
+    copyfile('nodust.ski', 'run/nodust_' + str(step) + '_' + str(numbers[i]) + '.ski')
+    for line in fileinput.input('run/nodust_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
         if 'stars_#.dat' in line:
-            line = line.replace('stars_#.dat', 'particle_data/stars_' +str(numbers[i])+ '.dat')
+            line = line.replace('stars_#.dat', 'particle_data/stars_' + str(step) + '_' + str(numbers[i]) + '.dat')
         sys.stdout.write(line)
         del line
         gc.collect()        

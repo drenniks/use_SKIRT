@@ -1,8 +1,10 @@
 ###This file will create a master submit file for the images.
 
 import numpy as np
+import sys
 
-numbers = np.loadtxt('pynbody_numbers.dat')
+step = sys.argv[1]
+numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 f = open('submit_images.sh','a')
 f.write('#!/bin/bash \n')
@@ -18,5 +20,5 @@ f.write('#SBATCH --mail-user=daniellerenniks@gmail.com \n')
 
 for i in range(len(numbers)):
     f = open('submit_images.sh','a')
-    f.write('sbatch submit/images_' + str(numbers[i]) + '.sh' + '\n')
+    f.write('sbatch submit/images_' + str(step) + '_' +str(numbers[i]) + '.sh' + '\n')
     f.close()

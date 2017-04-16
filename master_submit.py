@@ -1,7 +1,9 @@
 #Writes the master submit.sh file to submit all SKIRT simulations
 import numpy as np
+import sys
 
-numbers = np.loadtxt('pynbody_numbers.dat')
+step = sys.argv[1]
+numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 f = open('submit.sh','a')
 f.write('#!/bin/bash \n')
@@ -16,5 +18,5 @@ f.write('#SBATCH --mail-type=END,FAIL \n')
 f.write('#SBATCH --mail-user=daniellerenniks@gmail.com \n')
 
 for i in range(len(numbers)):
-    f.write('sbatch submit/skirt_' + str(numbers[i]) + '.sh' + '\n')
+    f.write('sbatch submit/skirt_' +  str(step) + '_' + str(numbers[i]) + '.sh' + '\n')
 f.close()
