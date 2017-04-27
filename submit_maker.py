@@ -1,5 +1,3 @@
-###Create images_*.sh submit files for each individual halo
-
 import sys
 import gc
 import fileinput 

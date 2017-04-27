@@ -12,7 +12,7 @@ Steps (here STEP = step number with six numbers, ex. 008192, 000909):
 8. python images_maker.py STEP
 9. python images_submit_maker.py STEP
 10. python submit_maker.py STEP
-11. python master_images.py STEP
+11. python master_images_submit.py STEP
 12. python master_submit.py STEP
 13. sbatch submit_images.sh
 14. sbatch submit.sh

@@ -7,7 +7,6 @@
 #SBATCH --export=ALL
 #SBATCH -t 48:00:00
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=daniellerenniks@gmail.com
 
 module load python
 module load scipy

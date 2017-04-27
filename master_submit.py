@@ -1,4 +1,3 @@
-#Writes the master submit.sh file to submit all SKIRT simulations
 import numpy as np
 import sys
 

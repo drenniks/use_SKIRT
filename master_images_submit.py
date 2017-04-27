@@ -1,5 +1,3 @@
-###This file will create a master submit file for the images.
-
 import numpy as np
 import sys
 
