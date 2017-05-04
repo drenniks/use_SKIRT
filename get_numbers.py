@@ -1,7 +1,3 @@
-###To run SKIRT on a selection of halos, you will need a list of the halo ID #'s. 
-###These correspond to the halo ID in the pynbody database, sorted from most massive to least.
-###Adjust the code below for your own criteria, or use what is here. 
-
 import fnmatch
 import os 
 import pynbody
@@ -30,6 +26,7 @@ for i in range(len(halos)):
 
 np.savetxt('num_' + str(step) + '.dat', numbers_pynbody)
 
+#Using the database
 '''
 for j in range(len(sim.halos)):
     ndm = len(sim.halos[j].NDM)

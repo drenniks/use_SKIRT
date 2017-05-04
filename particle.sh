@@ -12,5 +12,5 @@ module load python
 module load scipy
 cd $SLURM_SUBMIT_DIR
 
-python gas_dat.py STEP
-python stars_dat.py STEP
+python particle_data/gas_dat.py STEP
+python particle_data/stars_dat.py STEP

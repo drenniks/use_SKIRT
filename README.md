@@ -1,5 +1,6 @@
 # use_SKIRT
 Run SKIRT on many different halos at once!
+https://docs.google.com/document/d/1t1_jGyQKJ_RiFOV3Mu_I850_acKTB7qFlnFJ3rdz5g0/edit?usp=sharing
 
 Steps (here STEP = step number with six numbers, ex. 008192, 000909):
 1. git clone https://github.com/drenniks/use_SKIRT.git STEP
