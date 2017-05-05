@@ -1,0 +1,17 @@
+import os
+import run.Zubko_maker
+import run.nodust_maker
+import run.images_maker
+import submit.images_submit_maker
+import submit.submit_maker
+import submit.master_images_submit
+import submit.master_submit
+
+os.remove('Zubko_maker.pyc')
+os.remove('nodust_maker.pyc')
+os.remove('images_maker.pyc')
+os.remove('images_submit_maker.pyc')
+os.remove('submit_maker.pyc')
+os.remove('master_images_submit.pyc')
+os.remove('master_submit.pyc')
+
