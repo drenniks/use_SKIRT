@@ -8,7 +8,7 @@ step = sys.argv[1]
 numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 for i in range(len(numbers)):
-    copyfile('run/nodust.ski', 'run/nodust_' + str(step) + '_' + str(numbers[i]) + '.ski')
+    copyfile('nodust.ski', 'run/nodust_' + str(step) + '_' + str(numbers[i]) + '.ski')
     for line in fileinput.input('run/nodust_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
         if 'stars_#.dat' in line:
             line = line.replace('stars_#.dat', '../particle_data/stars_' + str(step) + '_' + str(numbers[i]) + '.dat')
