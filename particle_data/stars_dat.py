@@ -12,7 +12,7 @@ step = sys.argv[1]
 sim = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.' + str(step))
 halos = sim.halos(dosort=True)
 
-numbers = np.loadtxt('../num_' + str(step) + '.dat')
+numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 for i in numbers:
     try:
@@ -30,7 +30,7 @@ for i in numbers:
         age = stars['age'].in_units('yr')
         allarrays = np.vstack((x, y, z, h,  mass, metals, age)).T
         
-        np.savetxt('stars_' + str(step) + '_' + str(i) + '.dat', allarrays, delimiter=' ', fmt = '%1.6f')
+        np.savetxt('particle_data/stars_' + str(step) + '_' + str(i) + '.dat', allarrays, delimiter=' ', fmt = '%1.6f')
         del hn
         gc.collect()
 

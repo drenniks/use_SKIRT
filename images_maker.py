@@ -11,14 +11,14 @@ for i in range(len(numbers)):
     copyfile('run/images.ski', 'run/images_' + str(step) + '_' + str(numbers[i]) + '.ski')
     for line in fileinput.input('run/images_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
         if 'stars_#.dat' in line:
-            line = line.replace('stars_#.dat', '../particle_data/stars_' + str(step) + '_' + str(numbers[i]) + '.dat')
+            line = line.replace('stars_#.dat', 'particle_data/stars_' + str(step) + '_' + str(numbers[i]) + '.dat')
         sys.stdout.write(line)
         del line
         gc.collect()
 
     for line in fileinput.input('run/images_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
         if 'gas_#.dat' in line:
-            line = line.replace('gas_#.dat', '../particle_data/gas_' + str(step) + '_' + str(numbers[i]) + '.dat')
+            line = line.replace('gas_#.dat', 'particle_data/gas_' + str(step) + '_' + str(numbers[i]) + '.dat')
         sys.stdout.write(line)
         del line
         gc.collect()

@@ -11,7 +11,7 @@ step = sys.argv[1]
 sim = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.' + str(step))
 halos = sim.halos(dosort=True)
 
-numbers = np.loadtxt('../num_' + str(step) + '.dat')
+numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 for i in range(len(numbers)):
     try:
@@ -28,7 +28,7 @@ for i in range(len(numbers)):
         temp = hn.gas['temp'].in_units('K')
         allarrays = np.vstack((x, y, z, h,  mass, metals, temp)).T
 
-        np.savetxt('gas_' + str(step) + '_' + str(numbers[i]) + '.dat', allarrays, delimiter=' ', fmt = '%1.6f')
+        np.savetxt('particle_data/gas_' + str(step) + '_' + str(numbers[i]) + '.dat', allarrays, delimiter=' ', fmt = '%1.6f')
         del hn
         gc.collect()
 
