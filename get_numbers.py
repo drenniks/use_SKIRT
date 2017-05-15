@@ -1,19 +1,15 @@
+import config
 import fnmatch
 import os 
 import pynbody
-import tangos as db
 import numpy as np
 import sys
 
-
-step = sys.argv[1] 
-z = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.' + str(step))
+step = config.step_number
+z = pynbody.load(config.sim_location)
 halos = z.halos(dosort=True)
-sim = db.get_timestep('cosmo25%/%' + str(step))
 
 numbers_pynbody = []
-numbers_db = []
-
 for i in range(len(halos)):
     dark = len(halos[i].dark)
     stars = len(halos[i].stars)
@@ -25,16 +21,3 @@ for i in range(len(halos)):
         continue
 
 np.savetxt('num_' + str(step) + '.dat', numbers_pynbody)
-
-#Using the database
-'''
-for j in range(len(sim.halos)):
-    ndm = len(sim.halos[j].NDM)
-    ngas = len(sim.halos[j].Ngas)
-    nstars = len(sim.halos[j].Nstars)
-    if (ndm >= 100000) and (nstars + ngas >= 100000) and (ngas >= 5000):
-        numbers_db.append(j)
-    else:
-        continue
-np.savetxt('database_numbers.dat', numbers_db)
-'''

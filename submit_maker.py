@@ -1,10 +1,11 @@
+import config
 import sys
 import gc
 import fileinput 
 from shutil import copyfile 
 import numpy as np
 
-step = sys.argv[1]
+step = config.step_number
 numbers = np.loadtxt('num_' + str(step) + '.dat')
 
 for i in range(len(numbers)):

@@ -1,3 +1,4 @@
+import config
 import fnmatch
 import os
 import sys
@@ -7,9 +8,9 @@ import gc
 
 pynbody.config['number_of_threads'] = 1
 
-step = sys.argv[1]
+step = config.step_number
 
-sim = pynbody.load('/oasis/scratch/comet/mjt29/temp_project/Romulus25/cosmo25p.768sg1bwK1BHe75.' + str(step))
+sim = pynbody.load(config.sim_location)
 halos = sim.halos(dosort=True)
 
 numbers = np.loadtxt('num_' + str(step) + '.dat')

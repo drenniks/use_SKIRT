@@ -11,8 +11,6 @@
     <instrumentSystem type="InstrumentSystem">
       <InstrumentSystem>
         <instruments type="Instrument">
-          <SEDInstrument instrumentName="i90" distance="10 Mpc" inclination="90 deg" azimuth="0 deg" positionAngle="0 deg"/>
-          <SEDInstrument instrumentName="i00" distance="10 Mpc" inclination="0 deg" azimuth="0 deg" positionAngle="0 deg"/>
         </instruments>
       </InstrumentSystem>
     </instrumentSystem>
