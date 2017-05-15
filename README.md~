@@ -37,10 +37,30 @@ This repository is set up so that you can set the parameters and values that you
 
 
 The config file is where you can adjust the parameters of the radiative transfer simulations. There is a section for the SED instrument and a section for the image Frame instrument. The config file is alread filled out to show how the parameters should be set. I will comment on each parameter below. The following are parameters for simulating radiative transfer and producing SEDs:
-- `step_number`: the particular step number you are analyzing (in general this can be a name for this SKIRT run that you are doing). `sim_location`: path to the sph output. `detector_count`: the number of detectors you want to use. It is currently set at 2 detectors. You will need one detector for each position you want to "observe" the halo at. `names`: these are the names of the detectors, they will end up in your output labels. The SKIRT developers label them 'i90' or 'i00', according to the inclination. `distances`: distance from the halo to the detector. It is currently set at 10 Megaparsecs for each detecor. `inclinations`: the inclination of each detector with repect to the halo, set at 0 degrees (faceon) and 90 degrees (sideon). `azimuths`: the azimuth of each detector with respect to the halo, set at 0 degrees for both detectors. `positionAngles`: the position angles of each detector, set at 0 degrees for both detectors. `min_wavelength`: the minimum wavelength of the observed spectrum, set at 0.1 micron. `max_wavelength`: the maximum wavelength of the observed spectrum, set at 1000 mciron. `points`: resolution of the wavelength grid, set at 100 grid points. This can be increased for finer resolution. 
+- `step_number`: the particular step number you are analyzing (in general this can be a name for this SKIRT run that you are doing).
+-`sim_location`: path to the sph output
+-`detector_count`: the number of detectors you want to use. It is currently set at 2 detectors. You will need one detector for each position you want to "observe" the halo at.
+-`names`: these are the names of the detectors, they will end up in your output labels. The SKIRT developers label them 'i90' or 'i00', according to the inclination.
+-`distances`: distance from the halo to the detector. It is currently set at 10 Megaparsecs for each detecor.
+-`inclinations`: the inclination of each detector with repect to the halo, set at 0 degrees (faceon) and 90 degrees (sideon).
+-`azimuths`: the azimuth of each detector with respect to the halo, set at 0 degrees for both detectors.
+-`positionAngles`: the position angles of each detector, set at 0 degrees for both detectors.
+-`min_wavelength`: the minimum wavelength of the observed spectrum, set at 0.1 micron.
+-`max_wavelength`: the maximum wavelength of the observed spectrum, set at 1000 mciron.
+-`points`: resolution of the wavelength grid, set at 100 grid points. This can be increased for finer resolution. 
 
 The following parameters are for running radiative transfer and producing images of the halos:
--`frame count`: the number of frame detectors you want to use. It is set at 2 detectors. You will need one for each position you want to "observe" the halo at. `names_img`: like `names` above but for the image simulation. `distances_img`: like `distances` above. `inclinations_img`: like `inclinations` above. `azimuths_img`: like `azimuths` above. `positionAngles_img`: like `positionAngles` above. `pixelsX`: the dimension of the x-axis in pixels for the final image. It is currently set at 600. `pixelsY`: the dimension of the y-axis in pixels for the final image. It is set at 600. `fieldOfViewX`: the dimension of the field of view in the x direction for the frame, set at 40,000 parsecs. `fieldOfViewY`: the dimension of the field of view in the y direction for the frame, set at 40,000 parsecs. `wavelengths`: the desired wavelengths of the image. Currently set at red, green and blue.
+-`frame count`: the number of frame detectors you want to use. It is set at 2 detectors. You will need one for each position you want to "observe" the halo at.
+-`names_img`: like `names` above but for the image simulation.
+-`distances_img`: like `distances` above
+-`inclinations_img`: like `inclinations` above
+-`azimuths_img`: like `azimuths` above
+-`positionAngles_img`: like `positionAngles` above
+-`pixelsX`: the dimension of the x-axis in pixels for the final image. It is currently set at 600.
+-`pixelsY`: the dimension of the y-axis in pixels for the final image. It is set at 600.
+-`fieldOfViewX`: the dimension of the field of view in the x direction for the frame, set at 40,000 parsecs.
+-`fieldOfViewY`: the dimension of the field of view in the y direction for the frame, set at 40,000 parsecs. 
+-`wavelengths`: the desired wavelengths of the image. Currently set at red, green and blue.
 
 These parameters will produce faceon and side SEDs between 0.1 micron and 1000 microns from 10 Mpc away. They will also produce RGB, faceon and sideon images at 10 Mpc away for each halo. 
 
