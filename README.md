@@ -1,7 +1,7 @@
 # Use SKIRT on Comet
 Steps:
 1. `git clone https://github.com/drenniks/use_SKIRT.git STEP`
-2. Adjust the parameters in the config.py file
+2. Adjust the parameters in the config.py file and copy config.py to the directory `particle_data\`.
 3. `sbatch numbers.sh` (This will print a batch job number, copy and paste this number into the line below. JobID)
 5. `sbatch --dependency=afterok:JobID particle.sh`
 6. `python create.py` (This can only be done one numbers.sh has completed)
