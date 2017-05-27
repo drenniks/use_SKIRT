@@ -17,11 +17,11 @@ photon_packages = '1e5'
 
 #Frame instruments:
 frame_count = '3'
-names_img = 'i60, i90, i80'
-distances_img = '10 Mpc, 10 Mpc, 10 Mpc'
-inclinations_img = '60 deg, 90 deg, 80 deg'
-azimuths_img = '0 deg, 0 deg, 0 deg'
-positionAngles_img = '0 deg, 0 deg, 0 deg'
+names_img = ['i60', 'i90', 'i80']
+distances_img = ['10 Mpc', '10 Mpc', '10 Mpc']
+inclinations_img = ['60 deg', '90 deg', '80 deg']
+azimuths_img = ['0 deg', '0 deg', '0 deg']
+positionAngles_img = ['0 deg', '0 deg', '0 deg']
 pixelsX = '800'
 pixelsY = '800'
 fieldOfViewX = '40000 pc'

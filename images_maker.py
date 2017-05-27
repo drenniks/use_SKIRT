@@ -42,5 +42,5 @@ for i in range(len(numbers)):
     for line in fileinput.input('run/images_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
         print line,
         if line.startswith('        <instruments type="Instrument">'):
-            for j in np.arange(int(config.detector_count)):
+            for j in np.arange(int(config.frame_count)):
                 print '          <FrameInstrument instrumentName="'+config.names[j]+'" distance="'+config.distances[j]+'" inclination="'+config.inclinations[j]+'" azimuth="'+config.azimuths[j]+'" positionAngle="'+config.positionAngles[j]+'" pixelsX="'+config.pixelsX+'" pixelsY="'+config.pixelsY+'" fieldOfViewX="'+config.fieldOfViewX+'" fieldOfViewY="'+config.fieldOfViewY+'"/>'
