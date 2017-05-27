@@ -6,8 +6,6 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --export=ALL
 #SBATCH -t 00:20:00
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=daniellerenniks@gmail.com
 #SBATCH --checkpoint-dir=outputs
 
 module load python
