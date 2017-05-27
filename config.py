@@ -13,6 +13,7 @@ positionAngles = ['0 deg', '0 deg']
 min_wavelength = '0.1 micron'
 max_wavelength = '1000 micron'
 points = '100' 
+photon_packages = '1e5'
 
 #Frame instruments:
 frame_count = '3'
@@ -27,3 +28,4 @@ fieldOfViewX = '40000 pc'
 fieldOfViewY = '40000 pc'
 
 wavelengths = ['0.45 micron', '0.55 micron', '0.65 micron']
+photon_image = '1e6'

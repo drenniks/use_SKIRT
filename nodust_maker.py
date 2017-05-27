@@ -39,6 +39,13 @@ for i in range(len(numbers)):
         gc.collect()
 
     for line in fileinput.input('run/nodust_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
+        if 'packages="1e5"' in line:
+            line = line.replace('packages="1e5"', 'packages="' + config.photon_packages + '"')
+        sys.stdout.write(line)
+        del line
+        gc.collect()
+
+    for line in fileinput.input('run/nodust_'+ str(step) + '_' + str(numbers[i]) +'.ski', inplace=1):
         print line,
         if line.startswith('        <instruments type="Instrument">'):
             for j in np.arange(int(config.detector_count)):
